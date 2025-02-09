@@ -89,6 +89,8 @@ const Resume = () => {
         {/* Download Resume Button */}
         <div className="text-center mt-8">
           <a 
+          target="_blank"
+          rel="noopener noreferrer"
             href="/Aravind_Bandipelli_Resume.pdf"
             download="Aravind_Bandipelli_Resume.pdf"
             className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-md shadow-md transition duration-300"
