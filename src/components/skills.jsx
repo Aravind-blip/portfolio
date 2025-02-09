@@ -37,7 +37,7 @@ const categories = {
         icon: <FaChartBar />,
         skills: [
             { name: "Tableau", icon: <FaChartBar color="#005F9E" /> },
-            { name: "Power BI", icon: <FaChartBar color="#F2C811" /> },
+            // { name: "Power BI", icon: <FaChartBar color="#F2C811" /> },
             { name: "Excel", icon: <FaChartBar color="#007bff" /> }
         ]
     },
@@ -45,15 +45,15 @@ const categories = {
         icon: <FaCloud />,
         skills: [
             { name: "Azure", icon: <FaMicrosoft color="#0089D6" /> },
-            { name: "AWS (S3, Lambda)", icon: <FaAws color="#FF9900" /> }
+            // { name: "AWS (S3, Lambda)", icon: <FaAws color="#FF9900" /> }
         ]
     },
     "Automation & Testing": {
         icon: <FaVial />,
         skills: [
             { name: "Selenium WebDriver (C#)", icon: <FaDotCircle color="#68217A" /> },
-            { name: "Jira", icon: <FaJira color="#0052CC" /> },
-            { name: "Trello", icon: <FaTrello color="#0079BF" /> }
+            // { name: "Jira", icon: <FaJira color="#0052CC" /> },
+            // { name: "Trello", icon: <FaTrello color="#0079BF" /> }
         ]
     },
     "Version Control & Collaboration": {
