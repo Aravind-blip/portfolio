@@ -68,7 +68,7 @@ export default function Hero() {
           <a href="https://www.linkedin.com/in/aravind-bandipelli" target="_blank" rel="noopener noreferrer">
             <FiLinkedin className="text-white text-2xl hover:text-blue-400 transition duration-300" />
           </a>
-          <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Aravind-blip" target="_blank" rel="noopener noreferrer">
             <FiGithub className="text-white text-2xl hover:text-gray-400 transition duration-300" />
           </a>
           <a href="mailto:aravindbandipelli@gmail.com">
