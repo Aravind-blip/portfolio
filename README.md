@@ -60,3 +60,11 @@ npm run build
 ```bash
 npm run preview
 ```
+
+## Deployment
+
+This site is deployed to GitHub Pages with GitHub Actions.
+
+- Pushes to the default branch trigger the deployment workflow automatically
+- The workflow installs dependencies, builds the Vite app, uploads the `dist/` artifact, and deploys it to GitHub Pages
+- Vite is configured with `base: "/portfolio/"` so the site works correctly at `https://aravind-blip.github.io/portfolio/`
