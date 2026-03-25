@@ -61,7 +61,7 @@ const projects = [
     impact:
       "Produced clearer reliability signals and failure insights that can guide model improvement and fine-tuning.",
     link: null,
-    linkLabel: "TODO: add repo or walkthrough",
+    linkLabel: "",
   },
   {
     title: "Enterprise Finance Workflow Platform",
@@ -83,7 +83,7 @@ const projects = [
     impact:
       "Improved SQL performance by about 70 percent while supporting large-scale internal finance operations.",
     link: null,
-    linkLabel: "TODO: add case study link",
+    linkLabel: "",
   },
   {
     title: "Financial Forecasting ML Model",
@@ -98,7 +98,7 @@ const projects = [
     impact:
       "Created a reusable workflow for finance analytics, reporting, and forecast-driven decision support.",
     link: null,
-    linkLabel: "TODO: add repo or notes",
+    linkLabel: "",
   },
   {
     title: "AI-Generated React UI Component Library",
@@ -113,7 +113,7 @@ const projects = [
     impact:
       "Turned noisy AI-generated UI code into cleaner reusable components with better UX structure.",
     link: null,
-    linkLabel: "TODO: add GitHub or walkthrough",
+    linkLabel: "",
   },
 ];
 
