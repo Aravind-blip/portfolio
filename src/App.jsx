@@ -208,6 +208,8 @@ const skillGroups = [
   },
 ];
 
+const resumeHref = `${import.meta.env.BASE_URL}Aravind_Bandipelli_Resume.pdf`;
+
 function SectionHeader({ eyebrow, title, description }) {
   return (
     <div className="section-header">
@@ -265,7 +267,7 @@ function App() {
               </a>
               <a
                 className="button button-secondary"
-                href="/Aravind_Bandipelli_Resume.pdf"
+                href={resumeHref}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -412,7 +414,7 @@ function App() {
             <div className="resume-actions">
               <a
                 className="button button-primary"
-                href="/Aravind_Bandipelli_Resume.pdf"
+                href={resumeHref}
                 target="_blank"
                 rel="noopener noreferrer"
               >
