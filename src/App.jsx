@@ -119,20 +119,11 @@ const projects = [
 
 const experiences = [
   {
-    company: "Handshake AI Solutions",
+    company: "Optum",
     roles: [
       {
-        title: "AI Engineer Expert",
-        period: "2025 - Present",
-        bullets: [
-          "Evaluate LLM performance across reasoning, coding, analytics, and finance tasks.",
-          "Diagnose hallucinations, reasoning failures, and execution errors using structured review workflows.",
-          "Build benchmark-style evaluations and edge-case prompt tests that surface reliability gaps.",
-        ],
-      },
-      {
         title: "Software Engineer, AI Systems",
-        period: "2026 - Present",
+        period: "2024 - Present",
         bullets: [
           "Review AI-generated software outputs on real repositories across planning, coding, and verification.",
           "Inspect diffs, repository behavior, and failure points using Docker, Git, tests, and CI-like validation flows.",
