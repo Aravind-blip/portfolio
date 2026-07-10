@@ -1,0 +1,55 @@
+export const skillGroups = [
+  {
+    title: "AI Systems",
+    description: "Retrieval, agent, and evaluation work grounded in shipped tooling.",
+    skills: [
+      { name: "RAG", project: "knowledge-hub" },
+      { name: "Agent evaluation", project: "rag-agent-audit" },
+      { name: "LLM evaluation", project: "rag-agent-audit" },
+      { name: "Retrieval testing", project: "rag-agent-audit" },
+      { name: "Tool policy validation", project: "rag-agent-audit" },
+      { name: "Trace analysis", project: "rag-agent-audit" },
+      { name: "Hybrid search", project: "knowledge-hub" },
+    ],
+  },
+  {
+    title: "Application Engineering",
+    description: "Languages and frameworks used across professional and personal projects.",
+    skills: [
+      { name: "Python", project: "rag-agent-audit" },
+      { name: "TypeScript", project: "knowledge-hub" },
+      { name: "JavaScript", project: "portfolio" },
+      { name: "C#", project: "enterprise-finance-platform" },
+      { name: "React", project: "portfolio" },
+      { name: "Angular", project: "enterprise-finance-platform" },
+      { name: "FastAPI", project: "knowledge-hub" },
+      { name: "ASP.NET Core", project: "enterprise-finance-platform" },
+      { name: "REST APIs", project: "distributed-operations-control-plane" },
+    ],
+  },
+  {
+    title: "Data Systems",
+    description: "Storage, retrieval, and analysis layers behind the applications above.",
+    skills: [
+      { name: "SQL", project: "enterprise-finance-platform" },
+      { name: "SQL Server", project: "enterprise-finance-platform" },
+      { name: "PostgreSQL", project: "distributed-operations-control-plane" },
+      { name: "pgvector", project: "knowledge-hub" },
+      { name: "pandas", project: "diabetes-prediction" },
+      { name: "scikit-learn", project: "diabetes-prediction" },
+    ],
+  },
+  {
+    title: "Cloud and Infrastructure",
+    description: "Deployment, orchestration, and delivery pipelines used in real projects.",
+    skills: [
+      { name: "AWS", project: null },
+      { name: "Azure", project: "enterprise-finance-platform" },
+      { name: "Docker", project: "rag-agent-audit" },
+      { name: "Kubernetes", project: "distributed-operations-control-plane" },
+      { name: "GitHub Actions", project: "rag-agent-audit" },
+      { name: "Azure DevOps", project: "enterprise-finance-platform" },
+      { name: "CI/CD", project: "distributed-operations-control-plane" },
+    ],
+  },
+];
