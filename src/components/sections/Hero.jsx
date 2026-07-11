@@ -21,7 +21,7 @@ function Hero() {
         <p className="hero-support">{profile.tagline}</p>
 
         <div className="hero-actions">
-          <Button href="#projects" variant="primary">
+          <Button href="#featured-system" variant="primary">
             Explore Projects
             <FiArrowRight aria-hidden="true" />
           </Button>

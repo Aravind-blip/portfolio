@@ -9,7 +9,7 @@ function ProjectCaseStudy({ project }) {
     <article className="case-study">
       <Link className="back-link" to="/">
         <FiArrowRight className="back-arrow" aria-hidden="true" />
-        Back to projects
+        Back to systems
       </Link>
 
       <header className="case-study-header">

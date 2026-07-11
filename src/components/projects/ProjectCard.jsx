@@ -31,7 +31,7 @@ function ProjectCard({ project, variant = "full" }) {
       )}
 
       <div className="project-card-actions">
-        <Link className="project-link" to={`/projects/${project.slug}`}>
+        <Link className="project-link" to={`/systems/${project.slug}`}>
           Read case study
           <FiArrowRight aria-hidden="true" />
         </Link>

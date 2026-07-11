@@ -45,3 +45,6 @@ export const experienceLenses = [
     ],
   },
 ];
+
+export const currentDirection =
+  "Current direction: continued focus on AI systems evaluation and reliability engineering — the same direction reflected in what's actively being built in the Lab below.";
