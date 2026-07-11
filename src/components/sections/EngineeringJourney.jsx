@@ -1,12 +1,12 @@
 import SectionHeader from "../ui/SectionHeader";
-import { experienceLenses } from "../../data/experience";
+import { currentDirection, experienceLenses } from "../../data/experience";
 
-function Experience() {
+function EngineeringJourney() {
   return (
-    <section className="section" id="experience">
+    <section className="section" id="journey">
       <SectionHeader
-        eyebrow="Experience"
-        title="The same work, viewed through four engineering lenses"
+        eyebrow="Engineering Journey"
+        title="Sustained capability across contexts, not a resume timeline"
         description="Verified employer, title, and dates. Each lens highlights a different facet of the same roles rather than repeating the same bullets."
       />
       <div className="experience-stack">
@@ -30,8 +30,9 @@ function Experience() {
           </article>
         ))}
       </div>
+      <p className="journey-direction">{currentDirection}</p>
     </section>
   );
 }
 
-export default Experience;
+export default EngineeringJourney;

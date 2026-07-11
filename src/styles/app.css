@@ -74,6 +74,23 @@
   color: var(--color-text);
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  border-color: var(--color-border-strong);
+}
+
 .section {
   padding: 52px 0;
   scroll-margin-top: 96px;
@@ -119,7 +136,8 @@
 .resume-panel p,
 .contact-copy p,
 .hero-card p,
-.skill-group-description {
+.principle-evidence,
+.opensource-identity {
   color: var(--color-text-muted);
 }
 
@@ -260,14 +278,16 @@
 }
 
 .projects-grid,
-.skills-grid,
+.principles-list,
+.opensource-list,
 .lab-grid {
   display: grid;
   gap: 20px;
 }
 
 .projects-grid > *,
-.skills-grid > *,
+.principles-list > *,
+.opensource-list > *,
 .lab-grid > *,
 .experience-stack > *,
 .contact-card > *,
@@ -317,7 +337,8 @@
 }
 
 .project-header h3,
-.skill-group h3,
+.principle-card h3,
+.opensource-card h3,
 .experience-heading h3,
 .role-header h4,
 .lab-card h3 {
@@ -338,14 +359,14 @@
 }
 
 .chip-row,
-.skill-pill-grid {
+.filter-chip-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .chip,
-.skill-pill {
+.filter-chip {
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -353,6 +374,21 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   padding: 6px 10px;
+}
+
+.filter-chip {
+  cursor: pointer;
+  transition: border-color var(--motion-fast), color var(--motion-fast);
+}
+
+.filter-chip:hover,
+.filter-chip:focus-visible {
+  border-color: var(--color-border-strong);
+}
+
+.filter-chip-active {
+  color: var(--color-accent);
+  border-color: var(--color-accent-strong);
 }
 
 .project-card-actions {
@@ -416,7 +452,9 @@
 
 .experience-card,
 .resume-panel,
-.skill-group,
+.principle-card,
+.opensource-card,
+.featured-system,
 .lab-card {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -457,17 +495,76 @@
   white-space: nowrap;
 }
 
-.skills-grid {
+.principles-list,
+.opensource-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.skill-group {
+.principle-card,
+.opensource-card {
   padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.skill-group-description {
+.principle-statement {
+  color: var(--color-text);
+  font-weight: 600;
+  margin: 0;
+}
+
+.principle-evidence {
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.opensource-identity {
+  font-size: 0.94rem;
+  margin: 0;
+}
+
+.opensource-next {
   font-size: 0.9rem;
-  margin: 6px 0 16px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.opensource-next strong {
+  color: var(--color-text);
+}
+
+.featured-system {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.systems-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.systems-empty {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.journey-direction {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 .lab-grid {
@@ -629,7 +726,8 @@
 @media (max-width: 960px) {
   .hero,
   .projects-grid,
-  .skills-grid,
+  .principles-list,
+  .opensource-list,
   .lab-grid,
   .experience-card,
   .contact-card {
@@ -650,13 +748,29 @@
 
   .topbar {
     position: static;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
     margin-bottom: 28px;
   }
 
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  #primary-nav {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: 14px;
+  }
+
+  #primary-nav.nav-open {
+    display: block;
+  }
+
   .nav-list {
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
   .section {
@@ -666,7 +780,9 @@
   .hero-card,
   .project-card,
   .resume-panel,
-  .skill-group,
+  .principle-card,
+  .opensource-card,
+  .featured-system,
   .contact-card,
   .experience-card,
   .role-block,

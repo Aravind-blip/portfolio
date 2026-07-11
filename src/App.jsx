@@ -1,8 +1,13 @@
 import { MotionConfig } from "framer-motion";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
-import ProjectDetail from "./pages/ProjectDetail";
+import SystemDetail from "./pages/SystemDetail";
+
+function RedirectToSystem() {
+  const { slug } = useParams();
+  return <Navigate to={`/systems/${slug}`} replace />;
+}
 
 function App() {
   return (
@@ -11,7 +16,8 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="projects/:slug" element={<ProjectDetail />} />
+            <Route path="systems/:slug" element={<SystemDetail />} />
+            <Route path="projects/:slug" element={<RedirectToSystem />} />
           </Route>
         </Routes>
       </BrowserRouter>

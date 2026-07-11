@@ -1,7 +1,9 @@
 import Hero from "../components/sections/Hero";
-import FeaturedProjects from "../components/sections/FeaturedProjects";
-import Experience from "../components/sections/Experience";
-import Skills from "../components/sections/Skills";
+import FeaturedSystem from "../components/sections/FeaturedSystem";
+import Systems from "../components/sections/Systems";
+import Engineering from "../components/sections/Engineering";
+import OpenSource from "../components/sections/OpenSource";
+import EngineeringJourney from "../components/sections/EngineeringJourney";
 import EngineeringLab from "../components/sections/EngineeringLab";
 import Resume from "../components/sections/Resume";
 import Contact from "../components/sections/Contact";
@@ -10,9 +12,11 @@ function Home() {
   return (
     <>
       <Hero />
-      <FeaturedProjects />
-      <Experience />
-      <Skills />
+      <FeaturedSystem />
+      <Systems />
+      <Engineering />
+      <OpenSource />
+      <EngineeringJourney />
       <EngineeringLab />
       <Resume />
       <Contact />
