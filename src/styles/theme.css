@@ -16,7 +16,35 @@
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
+  --radius-pill: 999px;
   --motion-fast: 160ms ease;
+
+  /* Spacing scale (see Component Library Specification, Part 2.1) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Sizing (Part 2.8) */
+  --control-height: 46px;
+  --control-height-sm: 40px;
+  --touch-target-min: 44px;
+  --icon-inline: 16px;
+  --icon-button: 20px;
+  --icon-standalone: 24px;
+
+  /* Container / reading widths (Part 2.9) */
+  --width-content: 1180px;
+  --width-reading: 820px;
+  --width-hero-heading: 16ch;
 
   font-family: var(--font-sans);
   line-height: 1.5;
