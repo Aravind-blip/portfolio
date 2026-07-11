@@ -279,6 +279,18 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.project-card-featured {
+  margin-bottom: 20px;
+}
+
+.projects-grid-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card-compact {
+  gap: 12px;
+}
+
 .project-card,
 .contact-card {
   border-radius: var(--radius-md);
@@ -349,6 +361,10 @@
   gap: 16px;
   margin-top: auto;
   padding-top: 4px;
+}
+
+.project-card-compact .project-card-actions {
+  margin-top: 4px;
 }
 
 .status-badge {
