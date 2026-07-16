@@ -1,9 +1,15 @@
+import { diabetesPredictionCaseStudy } from "./diabetes-prediction";
+import { distributedOperationsControlPlaneCaseStudy } from "./distributed-operations-control-plane";
+import { enterpriseFinancePlatformCaseStudy } from "./enterprise-finance-platform";
+import { knowledgeHubCaseStudy } from "./knowledge-hub";
 import { ragAgentAuditCaseStudy } from "./rag-agent-audit";
 
-// Keyed by project slug. Only migrated projects appear here — SystemDetail
-// falls back to the legacy ProjectCaseStudy renderer for any slug not
-// present in this map, which is how projects migrate one at a time without
-// a flag day.
+// Keyed by project slug. Every project is migrated to this framework — see
+// SystemDetail for the (now dead) legacy ProjectCaseStudy fallback.
 export const caseStudies = {
   "rag-agent-audit": ragAgentAuditCaseStudy,
+  "distributed-operations-control-plane": distributedOperationsControlPlaneCaseStudy,
+  "knowledge-hub": knowledgeHubCaseStudy,
+  "enterprise-finance-platform": enterpriseFinancePlatformCaseStudy,
+  "diabetes-prediction": diabetesPredictionCaseStudy,
 };

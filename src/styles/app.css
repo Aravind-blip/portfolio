@@ -665,13 +665,6 @@
   padding-top: var(--space-6);
 }
 
-.case-study {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-10);
-  max-width: var(--width-reading);
-}
-
 .back-link {
   align-self: flex-start;
   font-family: var(--font-mono);
@@ -681,30 +674,6 @@
 
 .back-arrow {
   transform: rotate(180deg);
-}
-
-.case-study-header h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  letter-spacing: -0.02em;
-}
-
-.case-study section h2 {
-  font-size: 1.3rem;
-  margin: 0 0 12px;
-  color: var(--color-text);
-}
-
-.case-study section p {
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  margin: 0 0 10px;
-}
-
-.case-study-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
 }
 
 .architecture-diagram {

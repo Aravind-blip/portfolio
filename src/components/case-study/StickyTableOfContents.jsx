@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { useActiveSection } from "../../hooks/useActiveSection";
 
 function StickyTableOfContents({ sections }) {
   const [open, setOpen] = useState(false);
-  const ids = sections.map((section) => section.id);
+  // Memoized so the IntersectionObserver in useActiveSection isn't torn down
+  // and recreated on every render — this component re-renders on every
+  // scroll-triggered active-section change, which would otherwise recreate
+  // a fresh array (and therefore a fresh effect dependency) each time.
+  const ids = useMemo(() => sections.map((section) => section.id), [sections]);
   const activeId = useActiveSection(ids);
 
   return (

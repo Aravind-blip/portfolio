@@ -1,6 +1,7 @@
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { projects } from "../../data/projects";
+import SectionHeading from "./SectionHeading";
 
 function RelatedProjects({ id, slugs }) {
   const related = slugs
@@ -11,7 +12,7 @@ function RelatedProjects({ id, slugs }) {
 
   return (
     <section id={id} aria-labelledby={`${id}-heading`}>
-      <h2 id={`${id}-heading`}>Related systems</h2>
+      <SectionHeading id={`${id}-heading`}>Related systems</SectionHeading>
       <div className="related-projects-list">
         {related.map((project) => (
           <Link className="project-link" to={`/systems/${project.slug}`} key={project.slug}>

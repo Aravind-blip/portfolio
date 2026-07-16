@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 function EngineeringDecisionCard({ decision }) {
   const [expanded, setExpanded] = useState(false);
+  const detailsId = useId();
 
   return (
     <article className="decision-card">
@@ -13,6 +14,7 @@ function EngineeringDecisionCard({ decision }) {
         type="button"
         className="decision-toggle"
         aria-expanded={expanded}
+        aria-controls={detailsId}
         onClick={() => setExpanded((value) => !value)}
       >
         {expanded ? "Hide alternatives and tradeoffs" : "Show alternatives and tradeoffs"}
@@ -20,7 +22,7 @@ function EngineeringDecisionCard({ decision }) {
       </button>
 
       {expanded ? (
-        <dl className="decision-details">
+        <dl className="decision-details" id={detailsId}>
           <dt>Alternatives considered</dt>
           <dd>{decision.alternatives}</dd>
           <dt>Tradeoffs</dt>
