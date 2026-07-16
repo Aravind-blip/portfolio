@@ -38,7 +38,7 @@ function ProjectCaseStudy({ project }) {
 
       <section aria-labelledby="contribution-heading">
         <h2 id="contribution-heading">My contribution</h2>
-        <p>{project.whatIBuilt}</p>
+        <p>{project.contribution}</p>
       </section>
 
       <section aria-labelledby="decisions-heading">
