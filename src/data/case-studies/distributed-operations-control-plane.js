@@ -176,6 +176,7 @@ export const distributedOperationsControlPlaneCaseStudy = {
 
   repository: {
     githubUrl: "https://github.com/Aravind-blip/distributed-operations-control-plane",
+    license: "MIT",
     demoUrl: "https://frontend-production-ee3f.up.railway.app",
     demoNote: "Hosted on Railway's free tier; may be slow to wake from idle.",
     status: "Stable",

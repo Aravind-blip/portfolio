@@ -149,10 +149,16 @@ export const ragAgentAuditCaseStudy = {
 
   roadmap: [
     {
-      label: "Trace-import support (Langfuse, OpenTelemetry)",
-      status: "In progress",
+      label: "Trace import for Langfuse and OpenTelemetry",
+      status: "Shipped",
       detail:
-        "Already working in the codebase, ahead of the published roadmap; next step is stabilizing it into a documented, versioned feature.",
+        "Released in v0.8.0 as offline JSONL import and trace statistics for both formats. It does not call the Langfuse API or run an OpenTelemetry collector directly, and does not execute audit checks against imported traces yet.",
+    },
+    {
+      label: "Trace-based audit execution",
+      status: "Planned",
+      detail:
+        "The v0.8.0 release notes describe this as the next step the offline trace-import work was built toward — running audit checks directly against imported trace data instead of importing it for statistics alone.",
     },
   ],
 
