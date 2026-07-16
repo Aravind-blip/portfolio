@@ -14,6 +14,8 @@ export const projects = [
       "Once an LLM-backed feature ships, most teams have no repeatable way to check that retrieval, citations, and tool behavior still hold after a prompt, model, or retriever change. Regressions in these systems tend to surface only when a user notices something wrong.",
     whatIBuilt:
       "A Python CLI, published to PyPI, that runs a YAML-defined suite of deterministic checks against a RAG app or agent. It supports a fully offline mock mode for validating the audit configuration itself, and an HTTP mode that hits a real endpoint via configurable JSONPath response mapping. Results can be printed to the terminal, written as JUnit XML for CI test reporting, or posted as a GitHub Actions run summary.",
+    contribution:
+      "I designed and built every part of this project solo: the YAML suite schema, all five check types (citations, retrieved-source, tenant leakage, tool policy, fallback), both adapters, and every reporter format. The core architectural calls — deterministic checks instead of an LLM judge, JSONPath mapping instead of per-framework SDKs, and an offline-first mock mode — were mine to make and defend.",
     architecture: [
       { label: "Config", detail: "YAML audit suite, Pydantic-validated" },
       { label: "Adapter", detail: "Mock fixtures or HTTP via JSONPath mapping" },
@@ -51,6 +53,8 @@ export const projects = [
       "Reviewing this kind of system end to end (event flow, RBAC, observability, audit trail) is a useful way to demonstrate backend and operational thinking, even at simulation scale rather than production scale.",
     whatIBuilt:
       "A Spring Boot backend that generates synthetic service-health telemetry on a schedule, publishes it to Kafka, and reacts to degraded or offline transitions by creating alerts and routing them into a workflow approval process with a full audit trail. A React and TypeScript frontend provides the dashboard, and the whole stack runs via Docker Compose with Prometheus and Grafana wired up for metrics.",
+    contribution:
+      "I built this end to end, alone: the Spring Boot services, the Kafka producer/consumer pipeline, the RBAC and audit-trail logic, the React and TypeScript frontend, and the full observability stack. Keeping this a single well-tested service rather than a multi-service topology was a deliberate scope call I made, not a limitation I inherited.",
     architecture: [
       { label: "Producer", detail: "Scheduled job publishes synthetic health events to Kafka" },
       { label: "Consumer", detail: "Updates service state, creates alerts on degraded/offline transitions" },
@@ -89,6 +93,8 @@ export const projects = [
       "A RAG system is only as trustworthy as its retrieval and its willingness to say \"not enough information\" — getting both of those right, and being able to measure them, is the core hard problem in applied RAG.",
     whatIBuilt:
       "A full-stack RAG application where users upload PDF, text, or Markdown documents, and ask questions answered strictly from retrieved snippets with inline citations back to the source file and page. Retrieval combines pgvector cosine similarity with a lexical keyword-overlap re-score, isolated per organization at the database query and row-level-security level. A labeled evaluation dataset and script measure retrieval accuracy, grounded-answer rate, citation coverage, and fallback precision.",
+    contribution:
+      "I built the full stack solo — the FastAPI and SQLAlchemy backend, the hybrid retrieval logic, the row-level-security isolation, the frontend, and the evaluation harness. Choosing hybrid retrieval over vector-only search, and enforcing organization isolation at two independent layers, were both decisions I made after a simpler version fell short in testing.",
     architecture: [
       { label: "Ingestion", detail: "PDF/text/Markdown parsed and chunked (1000 chars, 150 overlap)" },
       { label: "Retrieval", detail: "pgvector cosine similarity blended with keyword-overlap re-scoring" },
@@ -126,6 +132,8 @@ export const projects = [
       "This project is explicitly educational: it demonstrates taking a trained model past a notebook and into a working client-server interface, not a clinical result.",
     whatIBuilt:
       "A logistic regression classifier trained on a public-style diabetes risk dataset (age, BMI, HbA1c level, blood glucose level, hypertension, heart disease, gender, and smoking history), served behind a small FastAPI backend and a Streamlit front end where a user enters those values and receives a binary risk indicator.",
+    contribution:
+      "I built this alone, end to end: the feature encoding, the logistic regression model, the FastAPI serving layer, and the Streamlit client. Choosing a single interpretable model over an ensemble was a deliberate choice, prioritizing transparency over marginal accuracy for a decision-support demo.",
     architecture: [
       { label: "Client", detail: "Streamlit form collects health measurement inputs" },
       { label: "API", detail: "FastAPI endpoint loads the serialized model and returns a prediction" },
@@ -160,6 +168,8 @@ export const projects = [
       "This is professional, verified work experience rather than an open-source project — it demonstrates sustained delivery and support on a system real finance users depended on daily.",
     whatIBuilt:
       "As part of an engineering team, contributed to workflow states, approval chains, and supporting REST APIs for an enterprise finance platform, working across Angular front ends, ASP.NET Core services, SQL Server data access, and Azure Functions automation, with releases managed through Azure DevOps.",
+    contribution:
+      "Within a larger engineering team, my specific ownership was the workflow-approval logic and its supporting REST APIs — including the SQL optimization work on the platform's highest-traffic endpoints and the decision to keep audit-trail writes inside the same transaction as workflow-state changes, so the two could never drift out of sync.",
     architecture: [
       { label: "Frontend", detail: "Angular workflow UI for finance approvals" },
       { label: "Backend", detail: "ASP.NET Core REST APIs and workflow logic" },
