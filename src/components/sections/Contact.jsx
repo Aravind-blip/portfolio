@@ -10,7 +10,7 @@ function Contact() {
         <div className="contact-copy">
           <p>{profile.contactMessage}</p>
         </div>
-        <div className="contact-list" role="list">
+        <div className="contact-list">
           <a
             href={`https://maps.google.com/?q=${encodeURIComponent(profile.location)}`}
             target="_blank"
