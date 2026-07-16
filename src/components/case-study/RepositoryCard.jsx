@@ -1,12 +1,13 @@
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import StatusBadge from "../ui/StatusBadge";
 import RepositoryBadge from "./RepositoryBadge";
+import SectionHeading from "./SectionHeading";
 import VersionBadge from "./VersionBadge";
 
 function RepositoryCard({ id, repository }) {
   return (
     <section id={id} aria-labelledby={`${id}-heading`}>
-      <h2 id={`${id}-heading`}>Repository</h2>
+      <SectionHeading id={`${id}-heading`}>Repository</SectionHeading>
       <article className="repository-card">
         <div className="repository-card-facts">
           <StatusBadge status={repository.status} />
