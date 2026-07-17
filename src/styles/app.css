@@ -1732,7 +1732,7 @@
   color: var(--color-text);
   text-align: left;
   font-size: 0.9rem;
-  transition: border-color 0.15s ease, opacity 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .explore-node:hover,
@@ -1754,7 +1754,14 @@
 }
 
 .explore-node-dimmed {
-  opacity: 0.5;
+  /* De-emphasize via border/background only, never opacity — opacity would
+     scale down the status badge's own text color along with everything
+     else and can push already-close-to-threshold badge colors below the
+     4.5:1 contrast minimum (confirmed by Lighthouse during Phase 10
+     verification). Text and badges inside a dimmed node stay at full,
+     already-verified contrast; only the node's visual weight recedes. */
+  border-color: transparent;
+  background: transparent;
 }
 
 .explore-details {
