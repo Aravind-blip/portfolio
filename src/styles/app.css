@@ -136,8 +136,7 @@
 .resume-panel p,
 .contact-copy p,
 .hero-card p,
-.principle-evidence,
-.opensource-identity {
+.principle-evidence {
   color: var(--color-text-muted);
 }
 
@@ -458,6 +457,12 @@
   color: var(--color-text-muted);
 }
 
+.status-archived {
+  color: var(--color-text-muted);
+  border-color: var(--color-border-strong);
+  opacity: 0.7;
+}
+
 .todo-note {
   color: #d4a94f;
   font-size: 0.9rem;
@@ -536,21 +541,6 @@
 .principle-evidence {
   font-size: 0.94rem;
   margin: 0;
-}
-
-.opensource-identity {
-  font-size: 0.94rem;
-  margin: 0;
-}
-
-.opensource-next {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-.opensource-next strong {
-  color: var(--color-text);
 }
 
 .featured-system {
@@ -1161,6 +1151,210 @@
 
   .technology-groups,
   .highlight-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Open Source Hub */
+.open-source-hub {
+  display: flex;
+  flex-direction: column;
+}
+
+.open-source-hero {
+  max-width: var(--width-reading);
+}
+
+.open-source-hero h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.flagship-repository {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.flagship-repository-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.flagship-repository-badges,
+.repository-entry-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.flagship-repository-signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.repository-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+}
+
+.repository-entry {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.repository-entry-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.repository-entry-header h3 {
+  margin: 0;
+  min-width: 0;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.repository-entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: auto;
+}
+
+.maintenance-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.maintenance-item {
+  border-left: 2px solid var(--color-border-strong);
+  padding-left: var(--space-4);
+}
+
+.maintenance-item-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  margin-bottom: 4px;
+}
+
+.maintenance-item-header h3 {
+  margin: 0;
+  min-width: 0;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.signals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+
+.signals-card {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+.signals-card h3 {
+  margin: 0 0 var(--space-3);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.signals-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.repo-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.repo-signal-available {
+  color: var(--color-text);
+}
+
+.repo-signal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border-strong);
+  flex-shrink: 0;
+}
+
+.repo-signal-available .repo-signal-dot {
+  background: var(--color-accent);
+}
+
+.repo-signal-detail {
+  color: var(--color-text-muted);
+}
+
+.open-source-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+}
+
+.open-source-roadmap-column h3 {
+  margin: 0 0 var(--space-3);
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.related-case-studies-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.open-source-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .repository-catalog-grid,
+  .signals-grid,
+  .open-source-roadmap-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -2,6 +2,7 @@ import { MotionConfig } from "framer-motion";
 import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
+import OpenSourceHub from "./pages/OpenSourceHub";
 import SystemDetail from "./pages/SystemDetail";
 
 function RedirectToSystem() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="open-source" element={<OpenSourceHub />} />
             <Route path="systems/:slug" element={<SystemDetail />} />
             <Route path="projects/:slug" element={<RedirectToSystem />} />
           </Route>

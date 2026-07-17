@@ -3,7 +3,7 @@ export const navigation = [
   { label: "Featured System", href: "#featured-system" },
   { label: "Systems", href: "#systems" },
   { label: "Engineering", href: "#engineering" },
-  { label: "Open Source", href: "#open-source" },
+  { label: "Open Source", href: "/open-source", type: "route" },
   { label: "Journey", href: "#journey" },
   { label: "Lab", href: "#lab" },
   { label: "Resume", href: "#resume" },

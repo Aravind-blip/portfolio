@@ -33,24 +33,30 @@ function Header() {
         className={menuOpen ? "nav-open" : undefined}
       >
         <ul className="nav-list">
-          {navigation.map((item) =>
-            isHome ? (
-              <li key={item.href}>
+          {navigation.map((item) => (
+            <li key={item.href}>
+              {item.type === "route" ? (
+                <Link
+                  to={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  aria-current={location.pathname === item.href ? "page" : undefined}
+                >
+                  {item.label}
+                </Link>
+              ) : isHome ? (
                 <a href={item.href} onClick={() => setMenuOpen(false)}>
                   {item.label}
                 </a>
-              </li>
-            ) : (
-              <li key={item.href}>
+              ) : (
                 <a
                   href={`${import.meta.env.BASE_URL}${item.href}`}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
                 </a>
-              </li>
-            )
-          )}
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
