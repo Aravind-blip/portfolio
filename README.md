@@ -1,70 +1,136 @@
-# Aravind Bandipelli Portfolio
+# Aravind Bandipelli — AI and Software Engineering Portfolio
 
-A modern personal portfolio built to showcase my work in software engineering, AI systems, full-stack development, and analytics.
+A recruiter-facing engineering portfolio built around evidence, not skill lists. Each featured project is presented as a technical case study with the problem, architecture, implementation decisions, tradeoffs, validation, and links to the underlying repository.
 
-## Live Site
-[View Portfolio](https://aravind-blip.github.io/portfolio/)
+## Live portfolio
 
-## About This Project
-This portfolio highlights my background as an AI Engineer and Full-Stack Software Engineer with experience in enterprise application development, LLM evaluation, debugging workflows, and data-focused projects.
+**[aravind-blip.github.io/portfolio](https://aravind-blip.github.io/portfolio/)**
 
-The site is designed to present my projects, experience, technical skills, resume, and contact information in a clean and recruiter-friendly format.
+## What the portfolio represents
 
-## Featured Areas
-- AI engineering and LLM evaluation
-- Full-stack development
-- Enterprise workflow systems
-- Data analytics and forecasting
-- React-based frontend development
+The site positions my work across three connected engineering areas:
 
-## Tech Stack
-- React
-- JavaScript
-- HTML5
-- CSS3
-- Vite
-- GitHub Pages
+- **AI systems:** RAG applications, agent evaluation, retrieval quality, grounding, and safety regression testing
+- **Backend and distributed systems:** APIs, event-driven workflows, authentication, observability, and deployment infrastructure
+- **Full-stack delivery:** React interfaces, typed project data, reusable components, accessibility, CI/CD, and production-oriented documentation
 
-## Sections Included
-- Hero
-- Projects
-- Experience
-- Skills
-- Resume
-- Contact
+Rather than presenting technologies as isolated keywords, the portfolio connects each capability to a project that demonstrates it.
 
-## Getting Started
+## Featured systems
 
-### Clone the repository
+### RAG Agent Audit
+
+A Python CLI and CI testing toolkit for deterministic regression checks across RAG retrieval, citations, tenant isolation, fallback behavior, and agent tool policies.
+
+- Package-style Python project
+- YAML-based test suites
+- JSONPath response mapping
+- JUnit, Markdown, JSON, and GitHub Actions reporting
+- Docker support and release automation
+
+Repository: [`Aravind-blip/rag-agent-audit`](https://github.com/Aravind-blip/rag-agent-audit)
+
+### Knowledge Hub
+
+A full-stack multi-tenant RAG application for searching internal policy and operations documents with organization-scoped retrieval and grounded citations.
+
+- Next.js and FastAPI
+- PostgreSQL with pgvector
+- Supabase Auth and row-level security
+- LangGraph orchestration
+- Retrieval evaluation, Playwright tests, and k6 load tests
+
+Repository: [`Aravind-blip/knowledge-hub`](https://github.com/Aravind-blip/knowledge-hub)
+
+### Distributed Operations Control Plane
+
+A simulated enterprise operations platform demonstrating distributed Java services, event-driven workflows, observability, role-based access, and deployment infrastructure.
+
+- Java 17 and Spring Boot 3
+- React and TypeScript
+- PostgreSQL and Kafka
+- JWT and method-level RBAC
+- Prometheus, Grafana, Docker, Kubernetes, and Jenkins
+
+Repository: [`Aravind-blip/distributed-operations-control-plane`](https://github.com/Aravind-blip/distributed-operations-control-plane)
+
+## Information architecture
+
+```text
+Home
+├── Featured System
+├── Systems Explorer
+├── Engineering Principles
+├── Open Source
+├── Engineering Journey
+└── Contact
+
+Project Case Study
+├── Overview
+├── My Contribution
+├── Architecture
+├── Engineering Decisions
+├── Implementation Highlights
+├── Validation
+├── Tradeoffs
+└── Related Projects
+```
+
+## Design principles
+
+- **Evidence before claims:** capabilities link to real repositories and implementation details
+- **Project depth over project count:** flagship systems receive complete technical case studies
+- **Clear ownership:** contribution sections distinguish personal decisions from general product descriptions
+- **Consistent documentation:** projects share a reusable case-study structure
+- **Accessible interaction:** semantic components, keyboard-friendly controls, appropriate ARIA relationships, and verified Lighthouse accessibility
+- **No inflated social proof:** the site avoids unsupported metrics, artificial star counts, and unverifiable claims
+
+## Technical implementation
+
+| Area | Technology |
+|---|---|
+| UI | React, JavaScript, semantic HTML, CSS |
+| Build | Vite |
+| Routing | React Router |
+| Content model | Structured project and case-study data modules |
+| Components | Reusable layout, navigation, project, documentation, and status components |
+| Quality | Accessibility review, Playwright verification, production build checks |
+| Deployment | GitHub Actions and GitHub Pages |
+
+## Repository structure
+
+```text
+portfolio/
+├── src/
+│   ├── components/       # Reusable UI and case-study components
+│   ├── data/             # Project, experience, and engineering evidence
+│   ├── pages/            # Routed pages and project case studies
+│   └── styles/           # Theme, tokens, and responsive presentation
+├── public/               # Static assets and resume files
+├── .github/workflows/    # Build and deployment automation
+└── docs/                 # Supporting portfolio and GitHub profile material
+```
+
+## Run locally
+
 ```bash
 git clone https://github.com/Aravind-blip/portfolio.git
 cd portfolio
-```
-
-### Install dependencies
-```bash
 npm install
-```
-
-### Start the development server
-```bash
 npm run dev
 ```
 
-### Build for production
+Production build:
+
 ```bash
 npm run build
-```
-
-### Preview the production build
-```bash
 npm run preview
 ```
 
 ## Deployment
 
-This site is deployed to GitHub Pages with GitHub Actions.
+The default branch is built and deployed to GitHub Pages through GitHub Actions. Vite uses the `/portfolio/` base path so routes and static assets resolve correctly under the project site URL.
 
-- Pushes to the default branch trigger the deployment workflow automatically
-- The workflow installs dependencies, builds the Vite app, uploads the `dist/` artifact, and deploys it to GitHub Pages
-- Vite is configured with `base: "/portfolio/"` so the site works correctly at `https://aravind-blip.github.io/portfolio/`
+## Current direction
+
+The portfolio is evolving from a resume-style website into an engineering record: fewer generic claims, deeper project documentation, visible architecture and tradeoffs, maintainable open-source work, and contributions that demonstrate how I build and reason about software systems.
