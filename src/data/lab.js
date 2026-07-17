@@ -2,11 +2,11 @@
 // side-projects. Statuses are honest about what is and isn't finished.
 export const labItems = [
   {
-    title: "Trace import for rag-agent-audit",
+    title: "Trace-based audit execution for rag-agent-audit",
     project: "rag-agent-audit",
-    status: "Experimental",
+    status: "Planned",
     note:
-      "Langfuse and OpenTelemetry trace import already work in the codebase, ahead of the published roadmap. Next step is stabilizing them into a documented, versioned feature.",
+      "Langfuse and OpenTelemetry trace import shipped in v0.8.0 as offline JSONL import. The next step, per that release's own notes, is running audit checks directly against imported trace data instead of importing it for statistics alone.",
   },
   {
     title: "CI-gated evaluation for Knowledge Hub",

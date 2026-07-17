@@ -4,6 +4,8 @@ const STATUS_CLASS = {
   Prototype: "status-prototype",
   Experimental: "status-experimental",
   Planned: "status-planned",
+  Learning: "status-prototype",
+  Archived: "status-archived",
   "Production support": "status-stable",
 };
 
