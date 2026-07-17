@@ -3,6 +3,7 @@ import Divider from "../components/case-study/Divider";
 import ProjectLayout from "../components/case-study/ProjectLayout";
 import RelatedLabEntries from "../components/case-study/RelatedLabEntries";
 import RelatedProjects from "../components/case-study/RelatedProjects";
+import ExploreMapLink from "../components/ui/ExploreMapLink";
 import ArticleHero from "../components/journal/ArticleHero";
 import ArticleSection from "../components/journal/ArticleSection";
 import KeyTakeaways from "../components/journal/KeyTakeaways";
@@ -72,6 +73,7 @@ function ArticlePage() {
       <Divider />
       <RelatedLabEntries id="related-lab" slugs={article.relatedLabEntries} />
       <RelatedProjects id="related-systems" slugs={article.relatedProjects} heading="Related Systems" />
+      <ExploreMapLink itemId={`journal-${article.slug}`} />
       <PreviousNextArticle currentSlug={article.slug} />
     </ProjectLayout>
   );
