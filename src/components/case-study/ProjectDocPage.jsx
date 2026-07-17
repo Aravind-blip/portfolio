@@ -1,4 +1,6 @@
+import { lazy, Suspense } from "react";
 import ArchitectureSection from "./ArchitectureSection";
+import SectionHeading from "./SectionHeading";
 import ChallengesSection from "./ChallengesSection";
 import Divider from "./Divider";
 import EngineeringDecisionsSection from "./EngineeringDecisionsSection";
@@ -17,7 +19,13 @@ import RoadmapTimeline from "./RoadmapTimeline";
 import SolutionSection from "./SolutionSection";
 import TechnologySection from "./TechnologySection";
 import TestingSection from "./TestingSection";
+import ExploreMapLink from "../ui/ExploreMapLink";
 import { labEntries } from "../../data/lab-entries";
+
+// The one flagship interactive explorer (Phase 10) only ever renders for
+// RAG Agent Audit, so it's code-split out of the shared ProjectDocPage
+// bundle every other case study also uses.
+const ArchitectureExplorer = lazy(() => import("./ArchitectureExplorer"));
 
 // The fixed section order every case study follows, never reordered
 // per-project. This list also drives the sticky table of contents, so
@@ -63,7 +71,16 @@ function ProjectDocPage({ caseStudy }) {
       <ProjectOverview id="overview" overview={caseStudy.overview} />
       <ProblemSection id="problem" problem={caseStudy.problem} />
       <SolutionSection id="solution" solution={caseStudy.solution} />
-      <ArchitectureSection id="architecture" architecture={caseStudy.architecture} />
+      {caseStudy.slug === "rag-agent-audit" ? (
+        <section id="architecture" aria-labelledby="architecture-heading">
+          <SectionHeading id="architecture-heading">Architecture</SectionHeading>
+          <Suspense fallback={null}>
+            <ArchitectureExplorer />
+          </Suspense>
+        </section>
+      ) : (
+        <ArchitectureSection id="architecture" architecture={caseStudy.architecture} />
+      )}
       <EngineeringDecisionsSection id="engineering-decisions" decisions={caseStudy.engineeringDecisions} />
       <TechnologySection id="technology" technology={caseStudy.technology} />
       <ImplementationSection id="implementation" implementation={caseStudy.implementation} />
@@ -77,6 +94,7 @@ function ProjectDocPage({ caseStudy }) {
       <RepositoryCard id="repository" repository={caseStudy.repository} />
       <RelatedProjects id="related" slugs={caseStudy.relatedProjects} />
       <RelatedEngineeringNotes id="related-notes" projectSlug={caseStudy.slug} />
+      <ExploreMapLink itemId={`system-${caseStudy.slug}`} />
     </ProjectLayout>
   );
 }

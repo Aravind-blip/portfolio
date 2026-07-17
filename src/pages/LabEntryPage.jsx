@@ -1,6 +1,7 @@
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { Navigate, useParams } from "react-router-dom";
 import Button from "../components/ui/Button";
+import ExploreMapLink from "../components/ui/ExploreMapLink";
 import Divider from "../components/case-study/Divider";
 import ProjectLayout from "../components/case-study/ProjectLayout";
 import RelatedProjects from "../components/case-study/RelatedProjects";
@@ -97,6 +98,7 @@ function LabEntryPage() {
       ) : null}
       <Divider />
       <RelatedProjects id="related" slugs={entry.relatedProjectIds} heading="Related System" />
+      <ExploreMapLink itemId={`lab-${entry.slug}`} />
     </ProjectLayout>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import CommandPaletteTrigger from "../command-palette/CommandPaletteTrigger";
 import { navigation } from "../../data/navigation";
 import { profile } from "../../data/profile";
 
@@ -16,16 +17,19 @@ function Header() {
         <span>{profile.name}</span>
       </Link>
 
-      <button
-        type="button"
-        className="nav-toggle"
-        aria-expanded={menuOpen}
-        aria-controls="primary-nav"
-        onClick={() => setMenuOpen((open) => !open)}
-      >
-        {menuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
-        <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
-      </button>
+      <div className="topbar-actions">
+        <CommandPaletteTrigger />
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="primary-nav"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+          <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+        </button>
+      </div>
 
       <nav
         aria-label="Primary navigation"

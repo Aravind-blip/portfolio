@@ -21,6 +21,12 @@ export const routeMetadata = {
     description:
       "Long-form engineering writing on architecture decisions, reliability, and production lessons from the systems Aravind Bandipelli builds.",
   },
+  explore: {
+    canonicalPath: "explore",
+    title: "Engineering Map | Aravind Bandipelli",
+    description:
+      "Explore the relationships between Aravind Bandipelli's AI systems, open-source projects, engineering investigations, and technical writing.",
+  },
   notFound: {
     title: "Page Not Found | Aravind Bandipelli",
     description: "The page you're looking for does not exist.",
