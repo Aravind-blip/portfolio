@@ -1358,3 +1358,33 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Engineering Lab */
+.lab-card-featured {
+  margin-bottom: var(--space-5);
+}
+
+.status-legend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.status-legend-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.not-found {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: var(--width-reading);
+}

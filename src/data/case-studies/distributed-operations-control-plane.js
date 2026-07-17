@@ -7,6 +7,8 @@ export const distributedOperationsControlPlaneCaseStudy = {
   slug: "distributed-operations-control-plane",
   title: "Distributed Operations Control Plane",
   subtitle: "A simulated ops control plane for service health, alerting, and workflow approvals",
+  metaDescription:
+    "An event-driven backend system for service health, alerting, and workflow approvals, built around Kafka-driven coordination and RBAC-enforced state transitions.",
   status: "Stable",
   category: "Backend & Distributed Systems",
 

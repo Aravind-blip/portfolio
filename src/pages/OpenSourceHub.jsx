@@ -7,18 +7,16 @@ import OpenSourceRoadmap from "../components/open-source/OpenSourceRoadmap";
 import RepositoryCatalog from "../components/open-source/RepositoryCatalog";
 import ReleaseDocumentationSignals from "../components/open-source/ReleaseDocumentationSignals";
 import GitHubProfileCTA from "../components/ui/GitHubProfileCTA";
-import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import { usePageMetadata } from "../hooks/usePageMetadata";
 import { flagshipProject, openSourceProjects } from "../data/open-source-projects";
+import { routeMetadata } from "../data/route-metadata";
 
 const caseStudySlugs = openSourceProjects
   .filter((project) => project.caseStudyUrl)
   .map((project) => project.slug);
 
 function OpenSourceHub() {
-  useDocumentTitle(
-    "Open Source | Aravind Bandipelli",
-    "Open-source projects by Aravind Bandipelli across AI evaluation, RAG systems, backend engineering, and developer tooling."
-  );
+  usePageMetadata(routeMetadata.openSource);
 
   return (
     <div className="open-source-hub">

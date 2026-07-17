@@ -5,7 +5,7 @@ export const navigation = [
   { label: "Engineering", href: "#engineering" },
   { label: "Open Source", href: "/open-source", type: "route" },
   { label: "Journey", href: "#journey" },
-  { label: "Lab", href: "#lab" },
+  { label: "Lab", href: "/lab", type: "route" },
   { label: "Resume", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ];

@@ -7,6 +7,8 @@ export const knowledgeHubCaseStudy = {
   slug: "knowledge-hub",
   title: "Knowledge Hub",
   subtitle: "Organization-scoped RAG search over uploaded documents, with citations and an eval harness",
+  metaDescription:
+    "A full-stack RAG system for ingesting documents, retrieving relevant context with hybrid search, and producing source-grounded, cited responses.",
   status: "Active",
   category: "AI Systems & Evaluation",
 

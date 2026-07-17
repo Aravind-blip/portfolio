@@ -9,6 +9,7 @@ import ProblemSection from "./ProblemSection";
 import ProjectHero from "./ProjectHero";
 import ProjectLayout from "./ProjectLayout";
 import ProjectOverview from "./ProjectOverview";
+import RelatedEngineeringNotes from "./RelatedEngineeringNotes";
 import RelatedProjects from "./RelatedProjects";
 import RepositoryCard from "./RepositoryCard";
 import ResultsSection from "./ResultsSection";
@@ -16,12 +17,13 @@ import RoadmapTimeline from "./RoadmapTimeline";
 import SolutionSection from "./SolutionSection";
 import TechnologySection from "./TechnologySection";
 import TestingSection from "./TestingSection";
+import { labEntries } from "../../data/lab-entries";
 
 // The fixed section order every case study follows, never reordered
 // per-project. This list also drives the sticky table of contents, so
 // adding a section here automatically makes it deep-linkable and
 // TOC-navigable without touching any other file.
-const SECTIONS = [
+const BASE_SECTIONS = [
   { id: "overview", label: "Overview" },
   { id: "problem", label: "Problem" },
   { id: "solution", label: "Solution" },
@@ -43,8 +45,13 @@ const SECTIONS = [
 // sixth project means adding a new src/data/case-studies/<slug>.js file and
 // one entry in case-studies/index.js — no new layout or component code.
 function ProjectDocPage({ caseStudy }) {
+  const hasRelatedNotes = labEntries.some((entry) => entry.caseStudyUrl === `/systems/${caseStudy.slug}`);
+  const sections = hasRelatedNotes
+    ? [...BASE_SECTIONS, { id: "related-notes", label: "Related Engineering Notes" }]
+    : BASE_SECTIONS;
+
   return (
-    <ProjectLayout sections={SECTIONS}>
+    <ProjectLayout sections={sections}>
       <ProjectHero
         title={caseStudy.title}
         subtitle={caseStudy.subtitle}
@@ -69,6 +76,7 @@ function ProjectDocPage({ caseStudy }) {
       <Divider />
       <RepositoryCard id="repository" repository={caseStudy.repository} />
       <RelatedProjects id="related" slugs={caseStudy.relatedProjects} />
+      <RelatedEngineeringNotes id="related-notes" projectSlug={caseStudy.slug} />
     </ProjectLayout>
   );
 }
