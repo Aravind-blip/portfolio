@@ -15,6 +15,12 @@ export const routeMetadata = {
     description:
       "Technical investigations, architecture notes, experiments, and engineering lessons from the systems Aravind Bandipelli builds.",
   },
+  journal: {
+    canonicalPath: "journal",
+    title: "Engineering Journal | Aravind Bandipelli",
+    description:
+      "Long-form engineering writing on architecture decisions, reliability, and production lessons from the systems Aravind Bandipelli builds.",
+  },
   notFound: {
     title: "Page Not Found | Aravind Bandipelli",
     description: "The page you're looking for does not exist.",

@@ -9,6 +9,7 @@ import LabEntryHero from "../components/lab/LabEntryHero";
 import LabSection from "../components/lab/LabSection";
 import { usePageMetadata } from "../hooks/usePageMetadata";
 import { labEntries } from "../data/lab-entries";
+import { publishedArticles } from "../data/journal-articles";
 import { openSourceProjects } from "../data/open-source-projects";
 
 const SECTION_DEFS = [
@@ -47,7 +48,10 @@ function LabEntryPage() {
   const relatedOpenSourceProject = openSourceProjects.find((project) =>
     entry.relatedProjectIds.includes(project.id)
   );
-  const hasReferences = Boolean(entry.relatedRepositoryUrl || entry.caseStudyUrl || relatedOpenSourceProject);
+  const relatedArticle = publishedArticles.find((article) => article.relatedLabEntries.includes(entry.slug));
+  const hasReferences = Boolean(
+    entry.relatedRepositoryUrl || entry.caseStudyUrl || relatedOpenSourceProject || relatedArticle
+  );
   const tocSections = [
     ...populatedSections.map(({ id, label }) => ({ id, label })),
     ...(hasReferences ? [{ id: "references", label: "Repository & References" }] : []),
@@ -80,6 +84,12 @@ function LabEntryPage() {
               <Button to="/open-source" variant="secondary">
                 <FiExternalLink aria-hidden="true" />
                 View in the Open Source Hub
+              </Button>
+            ) : null}
+            {relatedArticle ? (
+              <Button to={`/journal/${relatedArticle.slug}`} variant="secondary">
+                <FiExternalLink aria-hidden="true" />
+                Read the Journal article
               </Button>
             ) : null}
           </div>

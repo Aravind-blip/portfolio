@@ -56,6 +56,7 @@ export function usePageMetadata({
   imageAlt,
   type = "website",
   noIndex = false,
+  structuredData,
 }) {
   useEffect(() => {
     const previousTitle = document.title;
@@ -170,9 +171,22 @@ export function usePageMetadata({
     twitterImageAltTag.set(resolvedImageAlt);
     robotsTag.set(noIndex ? "noindex, nofollow" : "index, follow");
 
+    // Route-specific JSON-LD (e.g. TechArticle for a journal entry) is
+    // additive — it's tagged so it's only ever the one this hook created
+    // and removed, never the static Person/WebSite scripts in index.html.
+    let structuredDataTag;
+    if (structuredData) {
+      structuredDataTag = document.createElement("script");
+      structuredDataTag.type = "application/ld+json";
+      structuredDataTag.setAttribute("data-route-structured-data", "true");
+      structuredDataTag.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(structuredDataTag);
+    }
+
     return () => {
       document.title = previousTitle;
       bindings.forEach((binding) => binding.restore());
+      structuredDataTag?.remove();
     };
-  }, [title, description, canonicalPath, image, imageAlt, type, noIndex]);
+  }, [title, description, canonicalPath, image, imageAlt, type, noIndex, structuredData]);
 }
