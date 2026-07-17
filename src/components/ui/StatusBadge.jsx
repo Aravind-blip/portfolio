@@ -6,6 +6,10 @@ const STATUS_CLASS = {
   Planned: "status-planned",
   Learning: "status-prototype",
   Archived: "status-archived",
+  Validated: "status-stable",
+  "In progress": "status-experimental",
+  Paused: "status-planned",
+  Superseded: "status-archived",
   "Production support": "status-stable",
 };
 

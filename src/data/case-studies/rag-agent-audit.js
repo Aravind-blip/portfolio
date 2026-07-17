@@ -7,6 +7,8 @@ export const ragAgentAuditCaseStudy = {
   slug: "rag-agent-audit",
   title: "RAG Agent Audit",
   subtitle: "CI regression testing for RAG applications and AI agents",
+  metaDescription:
+    "An open-source regression-testing CLI for validating citations, retrieval boundaries, fallback behavior, and tool policies in RAG applications and AI agents.",
   status: "Active",
   category: "AI Systems & Evaluation",
 

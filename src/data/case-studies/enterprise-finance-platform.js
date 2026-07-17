@@ -8,6 +8,8 @@ export const enterpriseFinancePlatformCaseStudy = {
   slug: "enterprise-finance-platform",
   title: "Enterprise Finance Workflow Platform",
   subtitle: "Professional experience building and supporting an enterprise finance workflow system",
+  metaDescription:
+    "Professional experience contributing to an enterprise finance workflow-approval system, its supporting REST APIs, and audit-trail consistency.",
   status: "Production support",
   category: "Professional Experience",
 

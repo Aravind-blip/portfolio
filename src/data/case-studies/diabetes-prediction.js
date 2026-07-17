@@ -9,6 +9,8 @@ export const diabetesPredictionCaseStudy = {
   slug: "diabetes-prediction",
   title: "Diabetes Prediction App",
   subtitle: "An educational decision-support prototype, not a diagnostic tool",
+  metaDescription:
+    "An educational machine-learning prototype exploring feature preprocessing, model inference, and a client-server prediction workflow — not a diagnostic tool.",
   status: "Prototype",
   category: "Applied Machine Learning",
 
